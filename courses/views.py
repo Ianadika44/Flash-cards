@@ -6,7 +6,7 @@ import datetime as dt
 
 
 def welcome(request):
-    return HttpResponse('Welcome to the Flash-Card')
+    return render(request, 'index.html')
 
 
 def notes_of_day(request):
