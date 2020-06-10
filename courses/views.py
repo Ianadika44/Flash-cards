@@ -10,18 +10,18 @@ def welcome(request):
 
 
 def notes_of_day(request):
-    date = dt.date.today()
-    html = f'''
-        <html>
-            <body>
-                <h1>Notes for {day} {date.day}-{date.month}-{date.year}</h1>
-            </body>
-        </html>
-            '''
-    return HttpResponse(html)
+   # date = dt.date.today()
+    #html = f'''
+        #<html>
+           # <body>
+                #<h1>Notes for {day} {date.day}-{date.month}-{date.year}</h1>
+            #</body>
+        #</html>
+      #'''
+    #return HttpResponse(html)
 
 
-def convert_dates(dates):
+#def convert_dates(dates):
 
     # Function that gets the weekday number for the date.
     day_number = dt.date.weekday(dates)

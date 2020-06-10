@@ -1,6 +1,6 @@
 <!--Navbar -->
 <nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="{% url 'home' %}">Projects</a>
+    <a class="navbar-brand" href="{% url 'welcome' %}">FlashCards</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
         aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="{% url 'home' %}">Home
+                <a class="nav-link" href="{% url 'welcome' %}">Home
                     <span class="sr-only">(current)</span>
                 </a>
             </li>
@@ -20,7 +20,7 @@
         <ul class="navbar-nav ml-auto nav-flex-icons"  style="font-size: 20px">
             <li class="nav-item" style="margin-right:300px;">
                 <form class="form-inline my-lg-0 " action="#">
-                    <input class="form-control" type="search" name="project" placeholder="Search Project" aria-label="Search">
+                    <input class="form-control" type="search" name="project" placeholder="Search Flashcard" aria-label="Search">
                     <button class="btn btn-outline-white btn-md my-2 ml-3" type="submit">Search</button>
                 </form>
             </li>
@@ -43,7 +43,7 @@
                     <a class="dropdown-item" href="/accounts/password/change">Change Password</a>
                     <a class="dropdown-item" href="#">Profile</a>
                     <a class="dropdown-item" href="/logout">Logout</a>
-                 }
+                 
                     <a class="dropdown-item" href="/accounts/login">Login</a>
                  
 
