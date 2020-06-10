@@ -1,0 +1,51 @@
+{% load bootstrap3 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flash_cards</title>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <!-- <link rel="stylesheet" href="https://bootswatch.com/4/cosmo/bootstrap.min.css"> -->
+    {% block styles %}
+     
+    <!-- Font Awesome -->
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+   <!-- Bootstrap core CSS -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Material Design Bootstrap -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/css/mdb.min.css" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
+   {% bootstrap_css %}
+   <link rel="stylesheet" href="{% static 'css/main_style.css' %}">
+   {% endblock %}
+   <style>
+   body{
+    background-image: radial-gradient(circle, rgb(47, 47, 47), rgb(2, 0, 0));
+    font-size: 20px !important;
+   }
+   </style>
+    <link rel="icon" sizes="192x192" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIMHh7WIYkOKILqtZUfD9hSVQgNTFEybsnXcBZk-9py6mgB6vJQQ">
+</head>
+<body>  
+   {% include "navbar.html" %}
+   {% block content%}
+   
+   {% endblock%}
+   {% block scripts %}
+   <!-- JQuery -->
+       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+       <!-- Bootstrap tooltips -->
+       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+       <!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.1/js/mdb.min.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    {% bootstrap_javascript %}
+   {% endblock %}
+
+   
+</body>
+</html>
