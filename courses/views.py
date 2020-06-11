@@ -94,3 +94,25 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'search.html',{"message":message})
+
+@login_required(login_url='/accounts/login/')    
+def card(request,card_id):
+    try:
+        card = Card.objects.get(id = card_id)
+    except DoesNotExist:
+        raise Http404()
+    return render(request,"card.html", {"card":card})
+
+@login_required(login_url='/accounts/login/')
+def new_card(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = NewCardForm(request.POST, request.FILES)
+        if form.is_valid():
+            card = form.save(commit=False)
+            card.user = current_user
+            card.save()
+        return redirect('home')
+    else:
+        form = NewArticleForm()
+    return render(request, 'new_card.html', {"form": form})
