@@ -88,7 +88,7 @@ def search_results(request):
     if 'card' in request.GET and request.GET["card"]:
         search_term = request.GET.get("card")
         searched_cards = Card.search_by_title(search_term)
-        message = f"{search_term}"
+        #message = f"{search_term}"
 
         return render(request, 'search.html',{"message":message,"cards": searched_cards})
 

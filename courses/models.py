@@ -13,7 +13,7 @@ class Cards(models.Model):
     article_image = models.ImageField(upload_to = 'cards/')
 
  
-  def __str__(self):
+    def __str__(self):
         return self.title
 
     class Meta:
