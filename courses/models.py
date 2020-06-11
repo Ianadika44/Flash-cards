@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 class Cards(models.Model):
     title = models.CharField(max_length =60)
     post = models.TextField()
+    courses=models.TextField()
     user = models.ForeignKey(User,on_delete=models.CASCADE,null=True)
 
     pub_date = models.DateTimeField(auto_now_add=True)
@@ -18,12 +19,16 @@ class Cards(models.Model):
     class Meta:
         ordering = ['-id']
 
-    def save_course(self):
+    def save_card(self):
         self.save()
 
     def delete_card(self):
         self.delete()
 
+    @classmethod
+    def search_card_by_title(cls,search_term):
+        card = cls.objects.filter(title__icontains=search_term)
+        return card
 
 
 
