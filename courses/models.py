@@ -10,7 +10,7 @@ class Cards(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE,null=True)
 
     pub_date = models.DateTimeField(auto_now_add=True)
-    article_image = models.ImageField(upload_to = 'cards/')
+    card_image = models.ImageField(upload_to = 'cards/')
 
  
     def __str__(self):
