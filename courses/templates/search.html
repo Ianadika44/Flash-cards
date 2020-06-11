@@ -3,20 +3,20 @@
 <div class="container">
 
   <div class="row">
-    {% if courses%}
-      <h2>Found {{ courses|length }} of searched term {{message}}</h2>
+    {% if cards%}
+      <h2>Found {{ cards|length }} of searched term {{message}}</h2>
     {% else %}
-      <h2> Found 0 courses for the search term {{message}}</h2>
+      <h2> Found 0 cards for the search term {{message}}</h2>
     {% endif %}
 
   </div>
 
   <div class="row">
 
-  {% if courses %}
-    {% for course in courses %}
+  {% if cards %}
+    {% for card in cards %}
       <div class="col-sm-6 col-md-3">
-          <h1>{{course.title}}</h1>
+          <h1>{{card.title}}</h1>
       </div>
     {% endfor %}
   {% endif %}

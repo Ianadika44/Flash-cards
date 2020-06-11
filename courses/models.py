@@ -3,12 +3,13 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-class Courses(models.Model):
+class Cards(models.Model):
     title = models.CharField(max_length =60)
     post = models.TextField()
+    user = models.ForeignKey(User,on_delete=models.CASCADE,null=True)
 
     pub_date = models.DateTimeField(auto_now_add=True)
-    article_image = models.ImageField(upload_to = 'courses/')
+    article_image = models.ImageField(upload_to = 'cards/')
 
  
   def __str__(self):
@@ -20,7 +21,7 @@ class Courses(models.Model):
     def save_course(self):
         self.save()
 
-    def delete_course(self):
+    def delete_card(self):
         self.delete()
 
 
@@ -32,7 +33,7 @@ class Profile(models.Model):
     bio = models.TextField(default="")
     contact_info = models.CharField(max_length=200,blank=True)
     profile_Id = models.IntegerField(default=0)
-    all_projects = models.ForeignKey('courses',on_delete=models.CASCADE,null=True)
+    all_projects = models.ForeignKey('cards',on_delete=models.CASCADE,null=True)
 
     def __str__(self):
         return self.bio

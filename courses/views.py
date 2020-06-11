@@ -2,6 +2,11 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 import datetime as dt
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import render,redirect
+from django.http import HttpResponse, Http404,HttpResponseRedirect
+import datetime as dt
+from .models import Cards,Profile
+
 # Create your views here.
 
 
@@ -66,14 +71,26 @@ def profile_edit(request):
 @login_required(login_url='/accounts/login/')
 def profile(request):
     current_user = request.user
-    projects = Project.objects.filter(user = current_user)
+    Cards = Cards.objects.filter(user = current_user)
 
     try:   
         prof = Profile.objects.get(prof_user=current_user)
     except ObjectDoesNotExist:
         return redirect('new_profile')
 
-    return render(request,'profile/profile.html',{'profile':prof,'projects':projects})
+    return render(request,'profile/profile.html',{'profile':prof,'cards':cards})
 
 
      
+def search_results(request):
+    
+    if 'card' in request.GET and request.GET["card"]:
+        search_term = request.GET.get("card")
+        searched_cards = Card.search_by_title(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'search.html',{"message":message,"cards": searched_cards})
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'search.html',{"message":message})
