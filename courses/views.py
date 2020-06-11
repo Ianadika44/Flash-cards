@@ -10,7 +10,7 @@ from .models import Cards,Profile
 # Create your views here.
 
 
-def welcome(request):
+def home(request):
     return render(request, 'index.html')
 
 
