@@ -1,9 +1,9 @@
 from django import forms
 from .models import Card,Profile
 
-class CardForm(forms.ModelForm):
+class NewCardForm(forms.ModelForm):
     class Meta:
-        model = Project
+        model = Cards
         exclude = ['user','user_card_id']
 
 
