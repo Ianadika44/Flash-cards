@@ -1,0 +1,25 @@
+{%extends 'base.html'%} 
+{% block content %}
+<div class="container">
+
+  <div class="row">
+    {% if notes %}
+      <h2>Found {{ notes|length }} of searched term {{message}}</h2>
+    {% else %}
+      <h2> Found 0 notes for the search term {{message}}</h2>
+    {% endif %}
+
+  </div>
+
+  <div class="row">
+
+  {% if notes %}
+    {% for notes in notes %}
+      <div class="col-sm-6 col-md-3">
+          <h1>{{notes.title}}</h1>
+      </div>
+    {% endfor %}
+  {% endif %}
+  </div>
+</div>
+{% endblock %}
