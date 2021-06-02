@@ -92,7 +92,7 @@ SQLAlchemy==1.3.16
 sqlparse==0.3.0
 stripe==2.27.0
 typing==3.7.4.1
-urllib3==1.24.2
+urllib3==1.26.5
 virtualenv==20.0.20
 visitor==0.1.3
 webencodings==0.5
